@@ -277,15 +277,6 @@ module LibertyBuildpack::Services
       @logger.debug('sso - in add_web_app_security')
       wasec = REXML::Element.new('webAppSecurity', doc.root)
       wasec.add_attribute('ssoRequireSSL', 'true')
-      #YD start
-      app = doc.elements.to_a('//application').first
-      puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-      app-bnd = app.add_element('application-bnd')
-      security-role = app-bnd.add_element('security-role')
-      security-role.add_attribute('id','authenticated')
-      security-role.add_attribute('name', 'authenticated')
-      special-subject = security-role.add_element('special-subject')
-      special-subject.add_attribute('type', 'ALL_AUTHENTICATED_USERS')
     end
 
     #----------------------------------------------------------------------
