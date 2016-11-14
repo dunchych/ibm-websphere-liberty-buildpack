@@ -1,5 +1,5 @@
 {
-   "PingFSingleSignOn":[
+   "SingleSignOn":[
       {
          "credentials":{
             "clientId":"lindaTest",
@@ -15,8 +15,8 @@
             "signatureAlgorithm":"RS256",
             "userIdentityToCreateSubject":"sub"
          },
-         "label":"PingFSingleSignOn",
-         "name":"PingFSingleSignOn",
+         "label":"SingleSignOn",
+         "name":"SingleSignOn",
          "plan":"professional",
          "provider":null,
          "syslog_drain_url":null,
