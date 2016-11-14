@@ -138,7 +138,7 @@ module LibertyBuildpack
       
       #YD start
       if File.exists?("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json")
-          puts '-----> Detected override for VCAP_SERVICES is provided in resources/vcap_config.json. This should be used FOR TESTING ONLY'
+          #puts '-----> Detected override for VCAP_SERVICES is provided in resources/vcap_config.json. This should be used FOR TESTING ONLY'
           file = File.open("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json","rt")
           ENV["VCAP_SERVICES"]=file.read
           #puts ENV["VCAP_SERVICES"]
