@@ -283,7 +283,7 @@ module LibertyBuildpack::Services
           puts '-----> No application element is found'
       else
           puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-          app-bnd = app.add_element('application-bnd')
+          app-bnd = app[0].add_element('application-bnd')
           security-role = app-bnd.add_element('security-role')
           security-role.add_attribute('id','authenticated')
           security-role.add_attribute('name', 'authenticated')
