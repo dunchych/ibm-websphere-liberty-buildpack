@@ -135,6 +135,16 @@ module LibertyBuildpack
 
       @lib_directory = Buildpack.lib_directory app_dir
       @common_paths = LibertyBuildpack::Container::CommonPaths.new
+      
+      #YD start
+      if File.exists?("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json")
+          puts '-----> Detected override for VCAP_SERVICES is provided in resources/vcap_config.json. This should be used FOR TESTING ONLY'
+          file = File.open("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json","rt")
+          ENV["VCAP_SERVICES"]=file.read
+          puts ENV["VCAP_SERVICES"]
+      end
+      #YD end
+
       environment = ENV.to_hash
       vcap_application = environment.delete 'VCAP_APPLICATION'
       vcap_services = environment.delete 'VCAP_SERVICES'

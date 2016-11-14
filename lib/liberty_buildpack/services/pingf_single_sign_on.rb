@@ -48,16 +48,6 @@ module LibertyBuildpack::Services
     #------------------------------------------------------------------------------------------
     def parse_vcap_services(element, instance)
       @logger.debug('sso - in parse_vcap_services')
-      
-      #YD start
-      if File.exists?("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json")
-        puts '-----> Detected override for VCAP_SERVICES is provided in resources/vcap_config.json. This should be used FOR TESTING ONLYb'
-        file = File.open("/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/vcap_services.json","rt")
-        instance["VCAP_SERVICES"]=file.read
-        puts instance["VCAP_SERVICES"]
-      end
-      #YD end
-      
       properties = Utils.parse_compliant_vcap_service(element, instance) do |name, value|
         if name == 'credentials.serverSupportedScope' && value.instance_of?(Array)
           value.join(' ')
