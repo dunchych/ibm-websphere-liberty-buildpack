@@ -279,12 +279,12 @@ module LibertyBuildpack::Services
       wasec.add_attribute('ssoRequireSSL', 'true')
       #YD 11142016 begin - enable app security by default
       puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-      application = REXML::Element.new('webApplication',doc.root)
-      application.attributes['name'] = 'myapp'
-      application.attributes['location'] = 'myapp.war'
-      application.attributes['type'] = 'war'
-      application-bnd = application.add_element('application-bnd')
-      security-role = application-bnd.add_element('security-role')
+      app = REXML::Element.new('webApplication',doc.root)
+      app.attributes['name'] = 'myapp'
+      app.attributes['location'] = 'myapp.war'
+      app.attributes['type'] = 'war'
+      app-bnd = app.add_element('application-bnd')
+      security-role = app-bnd.add_element('security-role')
       security-role.attributes['id'] = 'authenticated'
       security-role.attributes['name'] = 'authenticated'
       special-subject = security-role.add_element('special-subject')
