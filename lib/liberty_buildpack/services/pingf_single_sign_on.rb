@@ -278,12 +278,12 @@ module LibertyBuildpack::Services
       wasec = REXML::Element.new('webAppSecurity', doc.root)
       wasec.add_attribute('ssoRequireSSL', 'true')
       #YD start
-      app = doc.elements.to_a('//application')
+      app = doc.elements.to_a('//application').first
       if app.empty?
           puts '-----> No application element is found'
       else
           puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-          app-bnd = app[0].add_element('application-bnd')
+          app-bnd = app.add_element('application-bnd')
           security-role = app-bnd.add_element('security-role')
           security-role.add_attribute('id','authenticated')
           security-role.add_attribute('name', 'authenticated')
