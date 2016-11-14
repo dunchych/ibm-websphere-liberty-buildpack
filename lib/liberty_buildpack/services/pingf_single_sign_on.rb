@@ -279,16 +279,16 @@ module LibertyBuildpack::Services
       wasec.add_attribute('ssoRequireSSL', 'true')
       #YD 11142016 begin - enable app security by default
       #puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-      app = REXML::Element.new('webApplication',doc.root)
-      app.add_attribute('name','myapp')
-      app.add_attribute('location','myapp.war')
-      app.add_attribute('type','war')
-      app-bnd = app.add_element('application-bnd')
-      security-role = app-bnd.add_element('security-role')
-      security-role.add_attribute('id','authenticated')
-      security-role.add_attribute('name', 'authenticated')
-      special-subject = security-role.add_element('special-subject')
-      special-subject.add_attribute('type', 'ALL_AUTHENTICATED_USERS')
+      #app = REXML::Element.new('webApplication',doc.root)
+      #app.add_attribute('name','myapp')
+      #app.add_attribute('location','myapp.war')
+      #app.add_attribute('type','war')
+      #app-bnd = app.add_element('application-bnd')
+      #security-role = app-bnd.add_element('security-role')
+      #security-role.add_attribute('id','authenticated')
+      #security-role.add_attribute('name', 'authenticated')
+      #special-subject = security-role.add_element('special-subject')
+      #special-subject.add_attribute('type', 'ALL_AUTHENTICATED_USERS')
       #YD 11142016 end
     end
 
