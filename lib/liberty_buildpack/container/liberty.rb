@@ -365,7 +365,7 @@ module LibertyBuildpack::Container
       application.attributes['context-root'] = get_context_root || '/'
       
       #YD start
-      puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
+      puts '-----> Adding application security binding for authenticated-->ALL_AUTHENTICATED_USERS'
       app_bnd = application.add_element('application-bnd')
       security_role = app_bnd.add_element('security-role')
       security_role.add_attribute('id','authenticated')
