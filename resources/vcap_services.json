@@ -1,0 +1,29 @@
+{
+   "PingFSingleSignOn":[
+      {
+         "credentials":{
+            "clientId":"lindaTest",
+            "secret":"{xor}CSYJPQpoFxlmKjw5DR5nbwU9FG0wNDpnJTccam1qNS9mbwYWGBgILjAlZwUFNyUUCzs7DTZvbTYHPBduNAsPMw==",
+            "authorizationEndpointUrl":"https://mrkdlvaiaas029.devfg.rbc.com:9031/as/authorization.oauth2",
+            "tokenEndpointUrl":"https://mrkdlvaiaas029.devfg.rbc.com:9031/as/token.oauth2",
+            "issuerIdentifier":"https://mrkdlvaiaas029.devfg.rbc.com:9031",
+            "serverSupportedScope":[
+               "openid profile"
+            ],
+            "grantType":"authorization_code",
+            "jwkEndpointUrl":"https://mrkdlvaiaas029.devfg.rbc.com:9031/pf/JWKS",
+            "signatureAlgorithm":"RS256",
+            "userIdentityToCreateSubject":"sub"
+         },
+         "label":"PingFSingleSignOn",
+         "name":"PingFSingleSignOn",
+         "plan":"professional",
+         "provider":null,
+         "syslog_drain_url":null,
+         "tags":[
+            "security",
+            "ibm_dedicated"
+         ]
+      }
+   ]
+}
