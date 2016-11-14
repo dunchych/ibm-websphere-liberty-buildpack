@@ -16,10 +16,10 @@
 # Service configuration
 ---
 # attributes required by all service plugins
-class_name : LibertyBuildpack::Services::SingleSignOn
+class_name : LibertyBuildpack::Services::PingFSingleSignOn
 class_file : pingf_single_sign_on.rb
 server_xml_stanza : openidConnectClient
-service_filter : 'SingleSignOn'
+service_filter : 'PingFSingleSignOn'
 
 # plugin specific attributes
 features : ['openidConnectClient-1.0', 'ssl-1.0', 'appSecurity-2.0']

@@ -26,7 +26,7 @@ module LibertyBuildpack::Services
   # nothing more. This will work if the service has provided "standard" JSON.
   #------------------------------------------------------------------------------------
 
-  class SingleSignOn
+  class PingFSingleSignOn
 
     #------------------------------------------------------------------------------------
     # Initialize
@@ -243,7 +243,7 @@ module LibertyBuildpack::Services
       oidc.add_attribute('issuerIdentifier', @issuer_identifier)
       oidc.add_attribute('scope', @scope)
     #YD 11102016 start - add PingFederate attributes
-      puts '-----> Adding PingFederate openidConnectClient attributes'
+      puts '-----> Adding openidConnectClient attributes for PingFederate'
       oidc.add_attribute('grantType', @grantType)
       oidc.add_attribute('jwkEndpointUrl', @jwkEndpointUrl)
       oidc.add_attribute('signatureAlgorithm', @signatureAlgorithm)
@@ -296,7 +296,7 @@ module LibertyBuildpack::Services
       Utils.find_and_update_attribute(oidc, 'issuerIdentifier', @issuer_identifier)
       Utils.find_and_update_attribute(oidc, 'scope', @scope)
     #YD 11102016 start - add PingFederate attributes
-    puts '-----> Updating PingFederate openidConnectClient attributes'
+    puts '-----> Updating openidConnectClient attributes for PingFederate'
       Utils.find_and_update_attribute(oidc, 'grantType', @grantType)
       Utils.find_and_update_attribute(oidc, 'jwkEndpointUrl', @jwkEndpointUrl)
       Utils.find_and_update_attribute(oidc, 'signatureAlgorithm', @signatureAlgorithm)
@@ -354,7 +354,7 @@ module LibertyBuildpack::Services
       @scope = "${cloud.services.#{@service_name}.connection.serverSupportedScope}"
       @issuer_identifier = "${cloud.services.#{@service_name}.connection.issuerIdentifier}"
     #YD 11102016 start - add PingFederate attributes
-      puts '-----> Creating PingFederate configuration in server.xml'
+      puts '-----> Creating openidConnectClient configuration in server.xml for PingFederate'
       @grantType = "${cloud.services.#{@service_name}.connection.grantType}"
       @jwkEndpointUrl = "${cloud.services.#{@service_name}.connection.jwkEndpointUrl}"
       @signatureAlgorithm = "${cloud.services.#{@service_name}.connection.signatureAlgorithm}"
