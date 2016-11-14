@@ -283,11 +283,11 @@ module LibertyBuildpack::Services
       application.attributes['name'] = 'myapp'
       application.attributes['location'] = 'myapp.war'
       application.attributes['type'] = 'war'
-      application-bnd = application.add_element 'application-bnd'
-      security-role = application-bnd.add_element 'security-role'
+      application-bnd = application.add_element('application-bnd')
+      security-role = application-bnd.add_element('security-role')
       security-role.attributes['id'] = 'authenticated'
       security-role.attributes['name'] = 'authenticated'
-      special-subject = security-role.add_element 'special-subject'
+      special-subject = security-role.add_element('special-subject')
       special-subject.attributes['type'] = 'ALL_AUTHENTICATED_USERS'
       #YD 11142016 end
     end
