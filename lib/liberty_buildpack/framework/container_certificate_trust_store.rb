@@ -87,7 +87,8 @@ module LibertyBuildpack::Framework
 
     private
 
-    CA_CERTIFICATES = Pathname.new('/etc/ssl/certs/ca-certificates.crt').freeze
+    #CA_CERTIFICATES = Pathname.new('/etc/ssl/certs/ca-certificates.crt').freeze
+    CA_CERTIFICATES = Pathname.new('/tmp/buildpacks/ibm-websphere-liberty-buildpack/resources/pingfederate.crt').freeze
 
     LOCAL_CERTS_ENABLED = 'enabled'.freeze
 

@@ -17,5 +17,5 @@
 # enabled: [true|false]
 # jvm_trust_store: [true|false]
 ---
-enabled: false
-jvm_trust_store: false
+enabled: true
+jvm_trust_store: true
