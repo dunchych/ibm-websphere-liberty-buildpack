@@ -363,6 +363,15 @@ module LibertyBuildpack::Container
       application.attributes['location'] = myapp_name
       application.attributes['type'] = myapp_type
       application.attributes['context-root'] = get_context_root || '/'
+      #YD 11142016 begin - enable app security by default
+      application-bnd = REXML::Element.new('application-bnd',application)
+      security-role = REXML::Element.new('application-bnd',application-bnd)
+      security-role.attributes['id'] = 'authenticated'
+      security-role.attributes['name'] = 'authenticated'
+      special-subject = REXML::Element.new('special-subject', security-role)
+      special-subject.attributes['type'] = 'ALL_AUTHENTICATED_USERS'
+      #YD 11142016 end
+
 
       # configure CDI 1.2 implicit bean archive scanning
       cdi = REXML::Element.new('cdi12', server_xml_doc.root)
