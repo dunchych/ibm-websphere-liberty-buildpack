@@ -366,12 +366,12 @@ module LibertyBuildpack::Container
       
       #YD start
       puts '-----> Creating security binding for authenticated-->ALL_AUTHENTICATED_USERS'
-      app-bnd = application.add_element('application-bnd')
-      security-role = app-bnd.add_element('security-role')
-      security-role.add_attribute('id','authenticated')
-      security-role.add_attribute('name', 'authenticated')
-      special-subject = security-role.add_element('special-subject')
-      special-subject.add_attribute('type', 'ALL_AUTHENTICATED_USERS')
+      app_bnd = application.add_element('application-bnd')
+      security_role = app_bnd.add_element('security-role')
+      security_role.add_attribute('id','authenticated')
+      security_role.add_attribute('name', 'authenticated')
+      special_subject = security_role.add_element('special-subject')
+      special_subject.add_attribute('type', 'ALL_AUTHENTICATED_USERS')
       #YD start
 
       # configure CDI 1.2 implicit bean archive scanning
