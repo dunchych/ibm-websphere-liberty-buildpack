@@ -10,7 +10,7 @@
             "serverSupportedScope":[
                "openid profile"
             ],
-            "grantType":"authorization_code",
+            "grantType":"implicit",
             "jwkEndpointUrl":"https://mrkdlvaiaas029.devfg.rbc.com:9031/pf/JWKS",
             "signatureAlgorithm":"RS256",
             "userIdentityToCreateSubject":"sub"
